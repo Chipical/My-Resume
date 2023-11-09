@@ -1,0 +1,202 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    line-height: 1.2;
+    font-weight: 500;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: #293241;
+    color: #e0fbfc ;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: grid;
+    /*sets gap between profile card and information cards */
+    gap: 2rem;
+}
+
+img {
+    right:0;
+    position: rela;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+a {
+    width: 200px;
+    color:  #ee6c4d;
+    text-decoration: none;
+    position: relative;
+    padding-left: 0rem;
+    transition: padding-left 0.25s ease-in-out, color 0.25s ease-in-out;
+}
+
+
+a::before {
+    content: '>';
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    position: absolute;
+    left: 0;
+}
+
+a:hover {
+    padding-left: 1rem;
+    color: #e0fbfc;
+}
+
+a:hover::before {
+    /* makes > visible*/
+    opacity: 1;
+}
+
+/*makes text with <small> be 90% fond size */
+small {
+    font-size: 90%;
+}
+
+p + p, p + ul {
+    margin-top: 0.5rem;
+}
+
+ul li + li {
+    margin-top: 0.5rem;
+}
+
+ul {
+    padding-left: 1rem;
+    list-style-type: disclosure-closed;
+}
+/*Header Styling*/
+h1 {
+    font-size: 2.5rem;
+    color: #e0fbfc;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #98c1d9;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color:#e0fbfc ;
+
+}
+
+h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #98c1d9 ;
+    text-align: center;
+}
+
+ul, p {
+    color: #e0fbfc ;
+}
+
+.card {
+    padding: 1.25rem;
+    position: relative;
+    animation: entry 1.5s ease;
+}
+.card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 20px;
+    background: #293241;
+
+    border: rgba(224,251,252,1) solid 2px;
+}
+
+.profile .card {
+    position: sticky;
+    top: 1rem;
+}
+
+.profile a {
+    display: table-caption;
+}
+
+.profile a + a {
+    margin-top: 0.25rem;
+}
+
+.profile img {
+    margin-bottom: 1rem;
+}
+
+.block + .block {
+    margin-top: 1.5rem;
+}
+
+.block ul {
+    font-weight: 300;
+}
+
+.block p {
+    color: #e0fbfc;
+}
+
+.card img {
+    border-radius: 1rem;
+}
+
+.info .card + .card {
+    margin-top: 2rem;
+}
+
+ul.pills {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.5rem;
+    align-items: baseline;
+    justify-content: center;
+}
+
+ul.pills > li {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    background-color:  #98c1d9;
+    color: #293241;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 20px;
+}
+
+footer {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 0.5rem 2rem;
+}
+
+@keyframes entry {
+    from {
+        transform: scale(0.4);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/*adjusts layout for smaller screens*/
+@media (min-width: 768px) {
+    main {
+        grid-template-columns: 350px 1fr;
+    }
+}
