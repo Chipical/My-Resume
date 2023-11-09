@@ -1,0 +1,217 @@
+body{
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-family: sans-serif;
+}
+/*global styling*/
+img{
+   width: 100%;
+   height: 100%;
+   transition: all 1s;
+}
+h1{
+   text-transform: uppercase;
+   margin: 0;
+}
+p{
+   font-size: 18px;
+   text-transform: capitalize;
+}
+.image-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   gap: 20px;
+}
+.container_btn {
+   margin-top: 20px; /* adjust as needed */
+}
+.btn{
+   width:150px;
+   height: 50px;
+   background-color: transparent;
+   transition: all 1s;
+   margin-right: 50px;
+}
+.btn:hover{
+   background-color: #121212;
+   color: #FFFFFF;
+}
+.container{
+   width: 500px;
+   height: 500px;
+   position: relative;
+   overflow: hidden;
+}
+.caption{
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   color: white;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   opacity: 0;
+   transition: all 1s;
+   background: black;
+}
+/*first*/
+.one .caption{
+   background: rgba(0,0,0,0);
+}
+.one:hover .caption{
+   opacity: 1;
+   background: rgba(0,0,0,0.5);
+}
+.one:hover img{
+   transform: scale(1.5) rotate(15deg);
+   transition: all 1s;
+}
+/*second*/
+.two .caption{
+   background: rgba(0,0,0,0);
+   transform: translateX(100%);
+}
+.two:hover .caption{
+   opacity: 1;
+   background: rgba(0,0,0,0.5);
+   transform: translateX(0);
+}
+.two:hover img{
+   transform: scale(1.5) rotate(-20deg);
+   transition: all 1s;
+}
+/*third*/
+.three .caption{
+   transform: translateY(100%);
+}
+
+.three:hover .caption{
+   opacity: 1;
+   transform: translateY(0);
+}
+.three:hover img{
+   transform: translateY(-100%);
+   transition: all 1s;
+}
+/*fourth*/
+.four .caption{
+   bottom:0;
+   top:auto;
+   height: 30%;
+   transform: translateY(100%);
+}
+
+.four:hover .caption{
+   opacity: 1;
+   transform: translateY(0);
+
+}
+.four img{
+   filter: grayscale(100%);
+}
+.four:hover img{
+ transform: translateY(10%) scale(1.1);
+ filter: grayscale(0);
+}
+/*fifth*/
+.five:before{
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 400%;
+height: 300%;
+background-color: rgba(135,206,250,0.5);
+transition: all 0.5s;
+transform: translate(550px,300px) rotate(45deg);
+}
+
+.five:hover:before{
+   transform: translate(-250px,-400px) rotate(45deg);
+}
+
+.five .caption{
+   justify-content: space-around;
+   background-color: transparent;
+   opacity: 1;
+}
+.five h2{
+   text-align: center;
+   font-size: 22px;
+   padding: 20px;
+   margin-top: 20px;
+   width: 100%;
+   background-color: rgba(65, 105, 225, 0.8);
+   transform: translate(250px,-250px) rotate(65deg);
+   transition: all 0.5s;
+}
+.five:hover h2{
+   transform: translate(0,0);
+   transition-delay: 0.3s;
+}
+
+.five p{
+   font-size:20px;
+   width: 80%;
+   align-self: center;
+   text-align: center;
+   transition: all 0.5s;
+   transform: translate(-250px,300px) rotate(75deg);
+}
+.five:hover p{
+   transform: translate(0,0) rotate(0);
+   transition-delay: 0.4s;
+}
+.five a{
+   text-decoration: none;
+   background-color: black;
+   color: white;
+   width: 120px;
+   padding: 30px;
+   margin-bottom: 20px;
+   align-self: center;
+   text-align: center;
+   transition: all 0.5s;
+   transform: translateY(200px);
+}
+.five:hover a{
+   transform: translateY(0);
+   transition-delay: 0.5s;
+}
+
+.six{
+   background-size: cover;
+   background: url(img/bg.jpg);
+}
+.six img{
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   width: 100%;
+   height: 100%;
+   background-size: cover;
+   transition: 1s;
+   pointer-events: none;
+}
+.six:hover img:nth-child(1){
+   opacity: 0;
+   filter:blur(10px);
+   transform: translateX(-50%) scaleX(2);
+}
+.six img:nth-child(2){
+   opacity: 0;
+   filter:blur(10px);
+   transform: translateX(50%) scaleX(2);
+}
+.six:hover img:nth-child(2){
+   opacity: 1;
+   filter:blur(0);
+   transform: translateX(0) scaleX(1.6);
+}
